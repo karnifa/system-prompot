@@ -2,46 +2,105 @@
 
 Use this file to record model names available in local runtimes. The prompts do not bind themselves to a specific model; change models in LM Studio or Ollama normally.
 
-When you download a new model, add the exact runtime name here.
+When you download a new model, copy one of the examples below, paste it in the right section, and change the values.
 
 ## LM Studio
 
 LM Studio models are stored locally under `C:\Users\pauli\.lmstudio\models`.
 
-Current models:
+### Gemma4 26B A4B Uncensored HauhauCS Balanced
 
-| Display name | Local path | Main model file |
-| --- | --- | --- |
-| Gemma4 26B A4B Uncensored HauhauCS Balanced | `HauhauCS\Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced` | `Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_M.gguf` |
-| Gemma 4 12B IT QAT | `lmstudio-community\gemma-4-12B-it-QAT-GGUF` | `gemma-4-12B-it-QAT-Q4_0.gguf` |
-| Qwen3.8 27B | `lmstudio-community\Qwen3.8-27B-GGUF` | `Qwen3.8-27B-Q4_K_M.gguf` |
+- Runtime: LM Studio
+- Folder: `HauhauCS\Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced`
+- Main file: `Gemma4-26B-A4B-Uncensored-HauhauCS-Balanced-Q4_K_M.gguf`
+- Notes:
+
+### Gemma 4 12B IT QAT
+
+- Runtime: LM Studio
+- Folder: `lmstudio-community\gemma-4-12B-it-QAT-GGUF`
+- Main file: `gemma-4-12B-it-QAT-Q4_0.gguf`
+- Notes:
+
+### Qwen3.8 27B
+
+- Runtime: LM Studio
+- Folder: `lmstudio-community\Qwen3.8-27B-GGUF`
+- Main file: `Qwen3.8-27B-Q4_K_M.gguf`
+- Notes:
 
 To add a new LM Studio model:
 
 1. Download or import the model in LM Studio.
 2. Find the new folder under `C:\Users\pauli\.lmstudio\models`.
-3. Add one row above with the display name, local path, and main `.gguf` file.
-4. Ignore `mmproj-*.gguf` files unless you specifically need to document multimodal projector files.
+3. Copy this block and paste it above the instructions:
+
+```md
+### New model name
+
+- Runtime: LM Studio
+- Folder: `creator-or-source\model-folder`
+- Main file: `model-file.gguf`
+- Notes:
+```
+
+4. Replace the title, folder, and main `.gguf` file.
+5. Ignore `mmproj-*.gguf` files unless you specifically need to document multimodal projector files.
 
 ## Ollama
 
 Add model names exactly as Ollama expects them. These are the names you can use with `ollama run <name>`.
 
-Current models:
+### Qwen3.8 27B Uncensored HauhauCS Aggressive
 
-| Runtime name | Size | Notes |
-| --- | ---: | --- |
-| `aiconjured/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF-Q8-NVFP4:latest` | 18 GB | Installed in Ollama |
-| `gemma4:26b` | 18 GB | Installed in Ollama |
-| `qwen3.8:27b` | 17 GB | Installed in Ollama |
-| `gemma4:12b` | 7.6 GB | Installed in Ollama |
+- Runtime: Ollama
+- Name: `aiconjured/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF-Q8-NVFP4:latest`
+- Size: 18 GB
+- Run with: `ollama run aiconjured/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF-Q8-NVFP4:latest`
+- Notes:
+
+### Gemma4 26B
+
+- Runtime: Ollama
+- Name: `gemma4:26b`
+- Size: 18 GB
+- Run with: `ollama run gemma4:26b`
+- Notes:
+
+### Qwen3.8 27B
+
+- Runtime: Ollama
+- Name: `qwen3.8:27b`
+- Size: 17 GB
+- Run with: `ollama run qwen3.8:27b`
+- Notes:
+
+### Gemma4 12B
+
+- Runtime: Ollama
+- Name: `gemma4:12b`
+- Size: 7.6 GB
+- Run with: `ollama run gemma4:12b`
+- Notes:
 
 To add a new Ollama model:
 
 1. Install it with Ollama.
 2. Run `ollama list`.
 3. Copy the exact value from the `NAME` column.
-4. Add one row above using that exact runtime name.
+4. Copy this block and paste it above the instructions:
+
+```md
+### New model name
+
+- Runtime: Ollama
+- Name: `ollama-model-name:tag`
+- Size:
+- Run with: `ollama run ollama-model-name:tag`
+- Notes:
+```
+
+5. Replace the title, `Name`, size, and `Run with` command.
 
 ## Notes
 
