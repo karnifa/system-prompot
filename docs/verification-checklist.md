@@ -31,4 +31,7 @@ Use this checklist before treating the prompt set as ready.
 - Each file has a distinct purpose.
 - Compiled targets can be used directly.
 - Each `targets/*.md` file has a matching `build/compiled-*.md` file.
+- Multi-step work gets lightweight task tracking.
+- Simple one-step requests do not become bureaucratic.
+- Repeated failed attempts trigger a pause, blocker summary, and changed approach.
 - Source material is transformed, not copied.
