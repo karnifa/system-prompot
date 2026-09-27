@@ -1,0 +1,2 @@
+FROM aiconjured/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF-Q8-NVFP4:latest
+PARAMETER num_ctx 131072

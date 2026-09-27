@@ -1,0 +1,44 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "ollama/qwen3.8:27b-128k",
+  "small_model": "ollama/gemma4:12b-128k",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "qwen3.8:27b-128k": {
+          "name": "Qwen3.8 27B",
+          "limit": {
+            "context": 131072,
+            "output": 16384
+          }
+        },
+        "gemma4:12b-128k": {
+          "name": "Gemma4 12B",
+          "limit": {
+            "context": 131072,
+            "output": 16384
+          }
+        },
+        "gemma4:26b-128k": {
+          "name": "Gemma4 26B",
+          "limit": {
+            "context": 131072,
+            "output": 16384
+          }
+        },
+        "qwen3.8-hauhaucs:128k": {
+          "name": "Qwen3.8 27B Uncensored HauhauCS Aggressive",
+          "limit": {
+            "context": 131072,
+            "output": 16384
+          }
+        }
+      }
+    }
+  }
+}

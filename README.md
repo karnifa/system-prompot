@@ -19,11 +19,15 @@ The design goal is to make the assistant feel capable without hardcoding a singl
 - `core/`: shared identity, collaboration style, boundaries, and automatic routing.
 - `modes/code/`: software engineering behavior.
 - `modes/design/`: product, UI, UX, and visual design behavior.
-- `docs/`: verification and source mapping notes.
+- `ollama/`: local Ollama Modelfiles used to create OpenCode-friendly model variants.
+- `opencode/`: reusable OpenCode config templates for local models.
+- `docs/`: verification, source mapping, and runtime setup notes.
 
 ## Model Catalog
 
 Model names are intentionally kept out of the system prompts. Use `models.md` as the place to record local model identifiers for LM Studio and Ollama. When a new model is downloaded later, add its runtime name there and keep the target prompts unchanged.
+
+For OpenCode + Ollama setup, see `docs/opencode-ollama.md`.
 
 ## Automatic Routing
 

@@ -51,37 +51,48 @@ To add a new LM Studio model:
 
 Add model names exactly as Ollama expects them. These are the names you can use with `ollama run <name>`.
 
+OpenCode uses the `128k` variants below. To switch OpenCode's default model, edit `C:\Users\pauli\.config\opencode\opencode.json` and change only `model` or `small_model`.
+
+Available OpenCode model values:
+
+```text
+ollama/qwen3.8:27b-128k
+ollama/gemma4:12b-128k
+ollama/gemma4:26b-128k
+ollama/qwen3.8-hauhaucs:128k
+```
+
 ### Qwen3.8 27B Uncensored HauhauCS Aggressive
 
 - Runtime: Ollama
-- Name: `aiconjured/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF-Q8-NVFP4:latest`
+- Name: `qwen3.8-hauhaucs:128k`
 - Size: 18 GB
-- Run with: `ollama run aiconjured/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF-Q8-NVFP4:latest`
-- Notes:
+- Run with: `ollama run qwen3.8-hauhaucs:128k`
+- Notes: 128k variant for OpenCode, created from `aiconjured/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF-Q8-NVFP4:latest`.
 
 ### Gemma4 26B
 
 - Runtime: Ollama
-- Name: `gemma4:26b`
+- Name: `gemma4:26b-128k`
 - Size: 18 GB
-- Run with: `ollama run gemma4:26b`
-- Notes:
+- Run with: `ollama run gemma4:26b-128k`
+- Notes: 128k variant for OpenCode, created from `gemma4:26b`.
 
 ### Qwen3.8 27B
 
 - Runtime: Ollama
-- Name: `qwen3.8:27b`
+- Name: `qwen3.8:27b-128k`
 - Size: 17 GB
-- Run with: `ollama run qwen3.8:27b`
-- Notes:
+- Run with: `ollama run qwen3.8:27b-128k`
+- Notes: 128k variant for OpenCode, created from `qwen3.8:27b`.
 
 ### Gemma4 12B
 
 - Runtime: Ollama
-- Name: `gemma4:12b`
+- Name: `gemma4:12b-128k`
 - Size: 7.6 GB
-- Run with: `ollama run gemma4:12b`
-- Notes:
+- Run with: `ollama run gemma4:12b-128k`
+- Notes: 128k variant for OpenCode, created from `gemma4:12b`.
 
 To add a new Ollama model:
 
@@ -101,6 +112,30 @@ To add a new Ollama model:
 ```
 
 5. Replace the title, `Name`, size, and `Run with` command.
+
+To create a 128k OpenCode-friendly variant:
+
+1. Create a Modelfile with:
+
+```md
+FROM original-model-name:tag
+PARAMETER num_ctx 131072
+```
+
+2. Create the new tag:
+
+```powershell
+ollama create new-model-name:128k -f path\to\Modelfile
+```
+
+3. Add the new tag to `C:\Users\pauli\.config\opencode\opencode.json` with:
+
+```json
+"limit": {
+  "context": 131072,
+  "output": 16384
+}
+```
 
 ## Notes
 
